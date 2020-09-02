@@ -1,4 +1,4 @@
-package br.fortsdev.contracheque.models;
+package br.fortsdev.imobilizado.models;
 
 public class Usuario {
     int codUsu;

@@ -1,4 +1,4 @@
-package br.fortsdev.contracheque.dao;
+package br.fortsdev.imobilizado.dao;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import br.fortsdev.contracheque.bdconfig.BDConfig;
+import br.fortsdev.imobilizado.bdconfig.BDConfig;
 
 public abstract class DataAccessObject{
 	public ArrayList<List<Object>> consulta(String query, Map<Integer, Object> parametros, int qtd_parametros_resposta) {

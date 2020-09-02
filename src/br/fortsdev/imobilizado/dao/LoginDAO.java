@@ -1,4 +1,4 @@
-package br.fortsdev.contracheque.dao;
+package br.fortsdev.imobilizado.dao;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -17,8 +17,8 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-import br.fortsdev.contracheque.models.Resposta;
-import br.fortsdev.contracheque.models.Usuario;
+import br.fortsdev.imobilizado.models.Resposta;
+import br.fortsdev.imobilizado.models.Usuario;
 
 public class LoginDAO extends DataAccessObject{
 	Map<String, String> env = System.getenv();

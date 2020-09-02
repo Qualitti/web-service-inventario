@@ -5,12 +5,12 @@
 	id="WebApp_ID" version="3.0">
 	<display-name>WebServiceAppImobilizado</display-name>
 
-	<servlet>
+	<servlet> 
 		<servlet-name>WebServiceAppImobilizado</servlet-name>
 		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
 		<init-param>
 			<param-name>com.sun.jersey.config.property.controller</param-name>
-			<param-value>br.fortsdev.contracheque.rest</param-value>
+			<param-value>br.fortsdev.imobilizado.rest</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>

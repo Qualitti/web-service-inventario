@@ -1,4 +1,4 @@
-package br.fortsdev.contracheque.rest;
+package br.fortsdev.imobilizado.rest;
 
 import javax.annotation.PostConstruct;
 import javax.mail.MessagingException;
@@ -14,9 +14,9 @@ import javax.ws.rs.core.MediaType;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import br.fortsdev.contracheque.dao.LoginDAO;
-import br.fortsdev.contracheque.models.Resposta;
-import br.fortsdev.contracheque.models.Usuario;
+import br.fortsdev.imobilizado.dao.LoginDAO;
+import br.fortsdev.imobilizado.models.Resposta;
+import br.fortsdev.imobilizado.models.Usuario;
 
 @Path("/login")
 public class ServicosLogin {
