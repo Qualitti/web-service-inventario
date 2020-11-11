@@ -14,6 +14,7 @@ import javax.ws.rs.core.MediaType;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import br.fortsdev.imobilizado.dao.ImobilizadoDAO;
 import br.fortsdev.imobilizado.dao.LoginDAO;
 import br.fortsdev.imobilizado.models.Resposta;
 import br.fortsdev.imobilizado.models.Usuario;
@@ -33,50 +34,9 @@ public class ServicosLogin {
 	@Produces(("application/json; charset=UTF-8"))
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Usuario realizaLogin(@HeaderParam("login") String login, @HeaderParam("senha") String senha) {
-		System.out.println("realziando login...");
+		System.out.println("realziando login..." + login);
 		Usuario usuario = loginDAO.autenticaUsuario(login, senha);
+		System.out.println("Usuario: " + usuario.getLogin());
 		return usuario;
-	}
-	
-	@POST
-	@Path("/edit")
-	@Produces(("application/json; charset=UTF-8"))
-	@Consumes(MediaType.APPLICATION_JSON)
-	public boolean atualizaSenha(@HeaderParam("cpf") String cpf) throws MessagingException {
-		System.out.println("atualizando senha...");
-		System.out.println("resultado da edição: " + loginDAO.atualizaSenhaUsuario(cpf)); 
-		return loginDAO.atualizaSenhaUsuario(cpf);
-	}
-	
-	@POST
-	@Path("/editemail")
-	@Produces(("application/json; charset=UTF-8"))
-	@Consumes(MediaType.APPLICATION_JSON)
-	public boolean atualiza_email(@HeaderParam("email") String email, @HeaderParam("cpf") String cpf){
-		System.out.println("atualizando email...");
-		return loginDAO.insereEmail(email, cpf);
-	}
-	
-	@POST
-	@Path("/editusuario")
-	@Produces(("application/json; charset=UTF-8"))
-	@Consumes(MediaType.APPLICATION_JSON)
-	public boolean atualiza_usuario(@HeaderParam("email") String email, @HeaderParam("telefone") String telefone, @HeaderParam("cpf") String cpf){
-		System.out.println("atualizando usuario...  " + email + " telefone: " + telefone + "  cpf: " + cpf);
-		
-		return loginDAO.atualizaDadosUsuario(email, telefone, cpf);
-	}
-	
-	@POST
-	@Path("/insert")
-	@Produces(("application/json; charset=UTF-8"))
-	@Consumes(MediaType.TEXT_PLAIN)
-	public Resposta insereUsuario(String inputJson) throws MessagingException, JSONException {
-		JSONObject recoData = new JSONObject(inputJson);
-		String cpf = recoData.get("cpf").toString();
-		String senha = recoData.get("senha").toString();
-		System.out.println("inserindo usuário...");
-
-		return loginDAO.cadastrarFuncionario(cpf, senha);
 	}
 }

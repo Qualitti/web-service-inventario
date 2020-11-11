@@ -1,4 +1,4 @@
-package br.fortsdev.imobilizado.dao;
+package br.fortsdev.imobilizado.services;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -8,12 +8,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import br.fortsdev.imobilizado.bdconfig.BDConfig;
-
-public abstract class DataAccessObject{
+public final class ServicosBancoDeDados{
 	public ArrayList<List<Object>> consulta(String query, Map<Integer, Object> parametros, int qtd_parametros_resposta) {
 		try {
-			    Connection conexao  = BDConfig.obtemConexao();
+			    Connection conexao  = ConexaoBD.obtemConexao();
 				java.sql.PreparedStatement ppstr = conexao.prepareStatement(query);	
 				
 				Iterator it = parametros.entrySet().iterator();
@@ -50,7 +48,7 @@ public abstract class DataAccessObject{
 	public int insereDados(String query, Map<Integer, Object> parametros) {
 		
 		try {
-			Connection conexao  = BDConfig.obtemConexao();
+			Connection conexao  = ConexaoBD.obtemConexao();
 			java.sql.PreparedStatement ppstr = conexao.prepareStatement(query);
 			
 			for (Entry<Integer, Object> entry : parametros.entrySet()) {
@@ -75,7 +73,7 @@ public abstract class DataAccessObject{
 	
 	public int atualizaDados(String query, Map<Integer, Object> parametros) {
 		try {
-			Connection conexao  = BDConfig.obtemConexao();
+			Connection conexao  = ConexaoBD.obtemConexao();
 			java.sql.PreparedStatement ppstr = conexao.prepareStatement(query);
 			
 			for (Entry<Integer, Object> entry : parametros.entrySet()) {

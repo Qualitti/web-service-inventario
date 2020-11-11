@@ -2,72 +2,18 @@ package br.fortsdev.imobilizado.models;
 
 public class Usuario {
     int codUsu;
-    int tipoUsu;
-	int codVend;
 	String login;
 	String senha;
 	String ativo;
-	double saldoFlex;
-	double descMax;
-	double acrescMax;
-	double provisao;
-	String imei;
-	String nome;
-	String email;
-	String telefone;
+	int codFunc;
+	String funcionario;
+	int empresa;
 	
-	
-	
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	public String getTelefone() {
-		return telefone;
-	}
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
-	}
-	public String getAtivo() {
-		return ativo;
-	}
-	public String getImei() {
-		return imei;
-	}
-	public void setImei(String imei) {
-		this.imei = imei;
-	}
-	public int getTipoUsu() {
-		return tipoUsu;
-	}
-	public void setTipoUsu(int tipoUsu) {
-		this.tipoUsu = tipoUsu;
-	}
-	public double getAcrescMax() {
-		return acrescMax;
-	}
-	public void setAcrescMax(double acrescMax) {
-		this.acrescMax = acrescMax;
-	}
 	public int getCodUsu() {
 		return codUsu;
 	}
 	public void setCodUsu(int codUsu) {
 		this.codUsu = codUsu;
-	}
-	public int getCodVend() {
-		return codVend;
-	}
-	public void setCodVend(int codVend) {
-		this.codVend = codVend;
 	}
 	public String getLogin() {
 		return login;
@@ -81,34 +27,31 @@ public class Usuario {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	public String isAtivo() {
+	public String getAtivo() {
 		return ativo;
 	}
 	public void setAtivo(String ativo) {
 		this.ativo = ativo;
 	}
-	public double getSaldoFlex() {
-		return saldoFlex;
+	public int getCodFunc() {
+		return codFunc;
 	}
-	public void setSaldoFlex(double saldoFlex) {
-		this.saldoFlex = saldoFlex;
+	public void setCodFunc(int codFunc) {
+		this.codFunc = codFunc;
 	}
-	public double getDescMax() {
-		return descMax;
+	public String getFuncionario() {
+		return funcionario;
 	}
-	public void setDescMax(double descMax) {
-		this.descMax = descMax;
+	public void setFuncionario(String funcionario) {
+		this.funcionario = funcionario;
 	}
-	public double getAcresMax() {
-		return acrescMax;
+	public int getEmpresa() {
+		return empresa;
 	}
-	public void setAcresMax(double acresMax) {
-		this.acrescMax = acresMax;
+	public void setEmpresa(int empresa) {
+		this.empresa = empresa;
 	}
-	public double getProvisao() {
-		return provisao;
-	}
-	public void setProvisao(double provisao) {
-		this.provisao = provisao;
-	}
+	
+	
+	
 }

@@ -1,10 +1,10 @@
-package br.fortsdev.imobilizado.bdconfig;
+package br.fortsdev.imobilizado.services;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class BDConfig {
-	private static final String USUARIO = "sankhya";
+public class ConexaoBD {
+	private static final String USUARIO = "teste";
 	private static final String SENHA = "tecsis";
 	private static final String PATH = "jdbc:oracle:thin:@192.168.0.246:1521:ORCL";
 	private static final String DRIVER = "oracle.jdbc.driver.OracleDriver";
