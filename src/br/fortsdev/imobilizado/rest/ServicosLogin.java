@@ -14,7 +14,7 @@ import javax.ws.rs.core.MediaType;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import br.fortsdev.imobilizado.dao.ImobilizadoDAO;
+import br.fortsdev.imobilizado.dao.BemDAO;
 import br.fortsdev.imobilizado.dao.LoginDAO;
 import br.fortsdev.imobilizado.models.Resposta;
 import br.fortsdev.imobilizado.models.Usuario;

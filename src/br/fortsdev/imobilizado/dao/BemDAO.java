@@ -22,7 +22,7 @@ import br.fortsdev.imobilizado.models.Resposta;
 import br.fortsdev.imobilizado.models.Usuario;
 import br.fortsdev.imobilizado.services.ServicosBancoDeDados;
 
-public class ImobilizadoDAO{
+public class BemDAO{
 	Map<String, String> env = System.getenv();
 	String dataLimite;
 	int codFunc, empresaFunc;
