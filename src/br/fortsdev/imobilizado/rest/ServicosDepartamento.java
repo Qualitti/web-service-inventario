@@ -28,18 +28,6 @@ public class ServicosDepartamento {
 	@Consumes(MediaType.APPLICATION_JSON)
 	public ArrayList<Departamento> buscaDepartamentos(@HeaderParam("codEmp") int codEmp) {
 		System.out.println("buscando departamentos... ");
-		ArrayList<Departamento> lista = new ArrayList<>();
-		Departamento departamento = new Departamento();
-		departamento.setCodDep(10);
-		departamento.setDescrDep("Almoxarifado");
-		lista.add(departamento);
-		
-		Departamento departamento1 = new Departamento();
-		departamento1.setCodDep(11);
-		departamento1.setDescrDep("Compras");
-		lista.add(departamento1);
-		
-		return lista;
-		//return departamentoDAO.listar();
+		return departamentoDAO.listaDepartamentos();
 	}
 }
