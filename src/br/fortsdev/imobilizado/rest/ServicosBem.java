@@ -29,7 +29,6 @@ public class ServicosBem {
 	@Consumes(MediaType.APPLICATION_JSON)
 	public ArrayList<Bem> buscaBensPorDepartamento(@HeaderParam("codDep") int codDep) {
 		System.out.println("buscando bens do departamento: " + codDep);
-		
 		return bemDAO.buscaListaBem(codDep);
 	}
 	

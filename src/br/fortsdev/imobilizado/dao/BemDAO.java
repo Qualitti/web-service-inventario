@@ -40,7 +40,7 @@ public class BemDAO{
 		 String query = "SELECT BEM.CODPROD,\r\n" + 
 		 		"       PRO.DESCRPROD,\r\n" + 
 		 		"       BEM.CODBEM,\r\n" + 
-		 		"       NVL(BEM.DESCRBEM, 'ERRO'),\r\n" + 
+		 		"       NVL(BEM.DESCRBEM, 'S/D'),\r\n" + 
 		 		"       BEM.CODEMP,\r\n" + 
 		 		"       DEP.CODDEPTO,\r\n" + 
 		 		"       DEP.DESCRDEP,\r\n" + 

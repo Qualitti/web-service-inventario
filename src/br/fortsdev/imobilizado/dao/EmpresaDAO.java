@@ -21,7 +21,6 @@ public class EmpresaDAO {
 				"FROM TSIEMP";
 		
 		Map<Integer, Object> parametros = new HashMap<Integer, Object>();
-
         
 		ArrayList<List<Object>> resultadoQuery = servicosBancoDeDados.consulta(query, parametros, 4);
 		Empresa empresa;
@@ -36,7 +35,7 @@ public class EmpresaDAO {
 					empresa.setCnpj(resultadoQuery.get(i).get(2).toString());
 					empresa.setNomeEmpresa(resultadoQuery.get(i).get(3).toString());
 					listaDeEmpresas.add(empresa);
-				}
+			}
 		}
 		return listaDeEmpresas;
 	}
