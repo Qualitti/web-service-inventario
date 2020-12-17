@@ -40,14 +40,6 @@ public class ServicosBem {
 	public Bem buscaBem(@HeaderParam("codRfid") String codRfid) {
 		System.out.println("buscando bem: " + codRfid);
 		
-		Bem bem1 = new Bem();
-		bem1.setCodBem("8");
-		bem1.setDescrBem("Cadeira");
-		bem1.setCodRFID(codRfid);
-		bem1.setCodDep(10);
-		bem1.setDescrDep("T.I");
-		bem1.setCodEmp(10);
-		
-		return bem1;
+		return bemDAO.buscaBem(codRfid);
 	}
 }

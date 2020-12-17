@@ -17,23 +17,43 @@ public class BemDAO{
 	String nomeFunc;
 	ServicosBancoDeDados servicosBancoDeDados = new ServicosBancoDeDados();
 	
-	public boolean buscaBem (int codRfid) {
+	public Bem buscaBem (String codRfid) {
 	
-		String query = "SELECT BEM.CODBEM\r\n" + 
-				"\r\n" + 
-				"FROM TCIBEM BEM\r\n" + 
-				"\r\n" + 
-				"WHERE AD_CODRFID = ?";
+		String query = "SELECT bem.codbem,\r\n" + 
+				"	   bem.codprod, \r\n" + 
+				"	   bem.descrbem,\r\n" + 
+				"	   bem.codemp,\r\n" + 
+				"      dep.coddep,\r\n" + 
+				"      dep.descrdep,\r\n" + 
+				"	   bem.ad_numpatrimonio as codRFID\r\n" + 
+				"			 \r\n" + 
+				"FROM tcibem bem,\r\n" + 
+				"     vcilocatual loc,\r\n" + 
+				"     tfpdep dep \r\n" + 
+				"	\r\n" + 
+				"WHERE bem.ad_codrfid = ?\r\n" + 
+				"      and loc.codprod = bem.codprod \r\n" + 
+				"      and loc.codbem = bem.codbem\r\n" + 
+				"      and loc.coddepto = dep.coddep";
 		
 		Map<Integer, Object> parametros = new HashMap<Integer, Object>();
 		parametros.put(1, codRfid);
         
-		ArrayList<List<Object>> resultadoQuery = servicosBancoDeDados.consulta(query, parametros, 1);
+		ArrayList<List<Object>> resultadoQuery = servicosBancoDeDados.consulta(query, parametros, 7);
 		
-		if (resultadoQuery != null && resultadoQuery.size() > 0) 
-			return true;
-		else 
-			return false;
+		if (resultadoQuery != null && resultadoQuery.size() > 0) {
+			Bem bem = new Bem();
+			bem.setCodBem(resultadoQuery.get(0).get(0).toString());
+			bem.setCodProd(((BigDecimal) resultadoQuery.get(0).get(1)).intValue());
+			bem.setDescrBem(resultadoQuery.get(0).get(2).toString());
+			bem.setCodEmp(((BigDecimal) resultadoQuery.get(0).get(3)).intValue());
+			bem.setCodDep(((BigDecimal) resultadoQuery.get(0).get(4)).intValue());
+			bem.setDescrDep(resultadoQuery.get(0).get(5).toString());
+			bem.setCodRFID(resultadoQuery.get(0).get(6).toString());
+			return bem;
+		}else {
+		  return null;	
+		}
 	}
 	
 	public ArrayList<Bem> buscaListaBem(int codDep){
