@@ -19,8 +19,7 @@ ServicosBancoDeDados servicosBancoDeDados = new ServicosBancoDeDados();
 				"FROM TFPDEP\r\n" + 
 				"\r\n" + 
 				"WHERE ATIVO = 'S'\r\n" + 
-				"     AND CODDEP > 0 \r\n"
-				+ "   AND CODDEP = 9322\r\n" + 
+				"     AND CODDEP > 0 \r\n"+
 				"     \r\n" + 
 				"ORDER BY DESCRDEP";
 		

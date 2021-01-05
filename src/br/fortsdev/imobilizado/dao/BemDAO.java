@@ -20,21 +20,21 @@ public class BemDAO{
 	public Bem buscaBem (String codRfid) {
 	
 		String query = "SELECT bem.codbem,\r\n" + 
-				"	   bem.codprod, \r\n" + 
-				"	   bem.descrbem,\r\n" + 
-				"	   bem.codemp,\r\n" + 
-				"      dep.coddep,\r\n" + 
-				"      dep.descrdep,\r\n" + 
-				"	   bem.ad_numpatrimonio as codRFID\r\n" + 
-				"			 \r\n" + 
-				"FROM tcibem bem,\r\n" + 
-				"     vcilocatual loc,\r\n" + 
-				"     tfpdep dep \r\n" + 
-				"	\r\n" + 
-				"WHERE bem.ad_codrfid = ?\r\n" + 
-				"      and loc.codprod = bem.codprod \r\n" + 
-				"      and loc.codbem = bem.codbem\r\n" + 
-				"      and loc.coddepto = dep.coddep";
+				"					   bem.codprod,  \r\n" + 
+				"					   case when bem.descrbem is null then 'Null' else bem.descrbem end as descrbem,\r\n" + 
+				"					   bem.codemp,\r\n" + 
+				"				      dep.coddep,\r\n" + 
+				"				      dep.descrdep,\r\n" + 
+				"					   bem.ad_numpatrimonio as codRFID\r\n" + 
+				"							\r\n" + 
+				"				FROM tcibem bem,\r\n" + 
+				"				     vcilocatual loc,\r\n" + 
+				"				     tfpdep dep \r\n" + 
+				"				\r\n" + 
+				"				WHERE bem.ad_numpatrimonio = ?\r\n" + 
+				"				      and loc.codprod = bem.codprod \r\n" + 
+				"				      and loc.codbem = bem.codbem\r\n" + 
+				"				      and loc.coddepto = dep.coddep";
 		
 		Map<Integer, Object> parametros = new HashMap<Integer, Object>();
 		parametros.put(1, codRfid);
