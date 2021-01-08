@@ -33,7 +33,7 @@ public class ServicosLogin {
 	@Path("/list")
 	@Produces(("application/json; charset=UTF-8"))
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Usuario realizaLogin(@HeaderParam("login") String login, @HeaderParam("senha") String senha) {
+	public Usuario realizaLogin(@HeaderParam("login") String login, @HeaderParam("senha") String senha){
 		System.out.println("realziando login..." + login);
 		Usuario usuario = loginDAO.autenticaUsuario(login, senha);
 		System.out.println("Usuario: " + usuario.getLogin());
